@@ -1,13 +1,13 @@
 Config = Config or {}
 
-Config.UsingDefaultQBApartments = true
+Config.UsingDefaultQBApartments = false
 Config.OnlyShowOnDuty = true
-Config.UseCQCMugshot = true
+Config.UseCQCMugshot = false
 
 -- Front, Back Side. Use 4 for both sides, we recommend leaving at 1 for default.
 Config.MugPhotos = 1
 
--- Images for mug shots will be uploaded here. Add a Discord webhook. 
+-- Images for mug shots will be uploaded here. Add a Discord webhook.
 Config.Webhook = ''
 
 -- Clock-in notifications for duty. Add a Discord webhook.
@@ -19,7 +19,7 @@ Config.ClockinWebhook = ''
 Config.BillVariation = true
 
 -- Set up your inventory to automatically retrieve images when a weapon is registered at a weapon shop or self-registered.
--- If you're utilizing lj-inventory's latest version from GitHub, no further modifications are necessary. 
+-- If you're utilizing lj-inventory's latest version from GitHub, no further modifications are necessary.
 -- However, if you're using a different inventory system, please refer to the "Inventory Edit | Automatic Add Weapons with images" section in ps-mdt's README.
 Config.InventoryForWeaponsImages = "lj-inventory"
 
@@ -28,53 +28,53 @@ Config.Fuel = "ps-fuel"
 
 -- Google Docs Link
 Config.sopLink = {
-    ['police'] = '',
+    ['police'] = 'https://docs.google.com/document/d/e/2PACX-1vRsIDmPavPGGyQOeD-w3Ki4Cz4fPOCglWPI5n0qpWldN4KLYe1aWeG-t_40CzfL5UBDaTV-kjZLuaZJ/pub',
     ['ambulance'] = '',
-    ['bcso'] = '',
-    ['doj'] = '',
-    ['sast'] = '',
-    ['sasp'] = '',
-    ['doc'] = '',
-    ['lssd'] = '',
-    ['sapr'] = '',
+    -- ['bcso'] = '',
+    -- ['doj'] = '',
+    -- ['sast'] = '',
+    -- ['sasp'] = '',
+    -- ['doc'] = '',
+    -- ['lssd'] = '',
+    -- ['sapr'] = '',
 }
 
 -- Google Docs Link
 Config.RosterLink = {
-    ['police'] = '',
-    ['ambulance'] = '',
-    ['bcso'] = '',
-    ['doj'] = '',
-    ['sast'] = '',
-    ['sasp'] = '',
-    ['doc'] = '',
-    ['lssd'] = '',
-    ['sapr'] = '',	
+    ['police'] = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRc1NLWmDshL3OCbWKl2kvKyOuA7M-mly6qw-1yOVZsC_rBGZV_AodWNnO9Hf2iTqj72XuVzrG9LPyi/pubhtml',
+    -- ['ambulance'] = '',
+    -- ['bcso'] = '',
+    -- ['doj'] = '',
+    -- ['sast'] = '',
+    -- ['sasp'] = '',
+    -- ['doc'] = '',
+    -- ['lssd'] = '',
+    -- ['sapr'] = '',
 }
 
 Config.PoliceJobs = {
     ['police'] = true,
-    ['lspd'] = true,
-    ['bcso'] = true,
-    ['sast'] = true,
-    ['sasp'] = true,
-    ['doc'] = true,
-    ['lssd'] = true,
-    ['sapr'] = true,
-    ['pa'] = true
+    -- ['lspd'] = true,
+    -- ['bcso'] = true,
+    -- ['sast'] = true,
+    -- ['sasp'] = true,
+    -- ['doc'] = true,
+    -- ['lssd'] = true,
+    -- ['sapr'] = true,
+    -- ['pa'] = true
 }
 
 Config.AmbulanceJobs = {
     ['ambulance'] = true,
-    ['doctor'] = true
+    -- ['doctor'] = true
 }
 
 Config.DojJobs = {
-    ['lawyer'] = true,
-    ['judge'] = true
+    -- ['lawyer'] = true,
+    ['judge'] = true,
 }
 
--- This is a workaround solution because the qb-menu present in qb-policejob fills in an impound location and sends it to the event. 
+-- This is a workaround solution because the qb-menu present in qb-policejob fills in an impound location and sends it to the event.
 -- If the impound locations are modified in qb-policejob, the changes must also be implemented here to ensure consistency.
 
 Config.ImpoundLocations = {
@@ -82,12 +82,12 @@ Config.ImpoundLocations = {
     [2] = vector4(-436.14, 5982.63, 31.34, 136.0),
 }
 
--- Support for Wraith ARS 2X. 
+-- Support for Wraith ARS 2X.
 
-Config.UseWolfknightRadar = false
+Config.UseWolfknightRadar = true
 Config.WolfknightNotifyTime = 5000 -- How long the notification displays for in milliseconds (30000 = 30 seconds)
 
--- IMPORTANT: To avoid making excessive database queries, modify this config to true 'CONFIG.use_sonorancad = true' setting in the configuration file located at 'wk_wars2x/config.lua'. 
+-- IMPORTANT: To avoid making excessive database queries, modify this config to true 'CONFIG.use_sonorancad = true' setting in the configuration file located at 'wk_wars2x/config.lua'.
 -- Enabling this setting will limit plate checks to only those vehicles that have been used by a player.
 
 Config.LogPerms = {
@@ -97,241 +97,319 @@ Config.LogPerms = {
 	['police'] = {
 		[4] = true,
 	},
-    ['bcso'] = {
-		[4] = true,
-	},
-    ['sast'] = {
-		[4] = true,
-	},
-    ['sasp'] = {
-		[4] = true,
-	},
-    ['sapr'] = {
-		[4] = true,
-	},
-    ['doc'] = {
-		[4] = true,
-	},
-    ['lssd'] = {
-		[4] = true,
-	},
+    -- ['bcso'] = {
+	-- 	[4] = true,
+	-- },
+    -- ['sast'] = {
+	-- 	[4] = true,
+	-- },
+    -- ['sasp'] = {
+	-- 	[4] = true,
+	-- },
+    -- ['sapr'] = {
+	-- 	[4] = true,
+	-- },
+    -- ['doc'] = {
+	-- 	[4] = true,
+	-- },
+    -- ['lssd'] = {
+	-- 	[4] = true,
+	-- },
 }
 
 Config.PenalCodeTitles = {
-    [1] = 'OFFENSES AGAINST PERSONS',
-    [2] = 'OFFENSES INVOLVING THEFT',
-    [3] = 'OFFENSES INVOLVING FRAUD',
-    [4] = 'OFFENSES INVOLVING DAMAGE TO PROPERTY',
-    [5] = 'OFFENSES AGAINST PUBLIC ADMINISTRATION',
-    [6] = 'OFFENSES AGAINST PUBLIC ORDER',
-    [7] = 'OFFENSES AGAINST HEALTH AND MORALS',
-    [8] = 'OFFENSES AGAINST PUBLIC SAFETY',
-    [9] = 'OFFENSES INVOLVING THE OPERATION OF A VEHICLE',
-    [10] = 'OFFENSES INVOLVING THE WELL-BEING OF WILDLIFE',
+    [1] = 'ASSAULT/MURDER',
+    [2] = 'THEFT / BURGLARY',
+    [3] = 'DRUGS',
+    [4] = 'PROPERTY DAMAGE / ENVIRONMENT',
+    [5] = 'WEAPONS',
+    [6] = 'PUBLIC ORDER AND CUSTODY',
+    [7] = 'OBSTRUCT JUSTICE / CORRUPTION',
+    [8] = 'FIREARMS',
+    [9] = 'TRAFFIC - GENERAL',
+    [10] = 'TRAFFIC - LICENSING / DEFECTS',
+    [11] = 'TRAFFIC - LIGHTS / MARKINGS',
+    [12] = 'TRAFFIC - VEHICLE OPERATION',
+    [13] = 'TRAFFIC - SPEEDING',
+    [14] = 'TRAFFIC - DRINK / DRUG DRIVING',
 }
 
 Config.PenalCode = {
+    -- Assault / Murder
     [1] = {
-        [1] = {title = 'Simple Assault', class = 'Misdemeanor', id = 'P.C. 1001', months = 7, fine = 500, color = 'green', description = 'When a person intentionally or knowingly causes physical contact with another (without a weapon)'},
-        [2] = {title = 'Assault', class = 'Misdemeanor', id = 'P.C. 1002', months = 15, fine = 850, color = 'orange', description = 'If a person intentionally or knowingly causes injury to another (without a weapon)'},
-        [3] = {title = 'Aggravated Assault', class = 'Felony', id = 'P.C. 1003', months = 20, fine = 1250, color = 'orange', description = 'When a person unintentionally, and recklessly causes bodily injury to another as a result of a confrontation AND causes bodily injury'},
-        [4] = {title = 'Assault with a Deadly Weapon', class = 'Felony', id = 'P.C. 1004', months = 30, fine = 3750, color = 'red', description = 'When a person intentionally, knowingly, or recklessly causes bodily injury to another person AND either causes serious bodily injury or uses or exhibits a deadly weapon'},
-        [5] = {title = 'Involuntary Manslaughter', class = 'Felony', id = 'P.C. 1005', months = 60, fine = 7500, color = 'red', description = 'When a person unintentionally and recklessly causes the death of another'},
-        [6] = {title = 'Vehicular Manslaughter', class = 'Felony', id = 'P.C. 1006', months = 75, fine = 7500, color = 'red', description = 'When a person unintentionally and recklessly causes the death of anther with a vehicle'},
-        [7] = {title = 'Attempted Murder of a Civilian', class = 'Felony', id = 'P.C. 1007', months = 50, fine = 7500, color = 'red', description = 'When a non-government person intentionally attacks another with the intent to kill'},
-        [8] = {title = 'Second Degree Murder', class = 'Felony', id = 'P.C. 1008', months = 100, fine = 15000, color = 'red', description = 'Any intentional killing that is not premeditated or planned. A situation in which the killer intends only to inflict serious bodily harm.'},
-        [9] = {title = 'Accessory to Second Degree Murder', class = 'Felony', id = 'P.C. 1009', months = 50, fine = 5000, color = 'red', description = 'Being present and or participating in the act of parent charge'},
-        [10] = {title = 'First Degree Murder', class = 'Felony', id = 'P.C. 1010', months = 0, fine = 0, color = 'red', description = 'Any intentional killing that is willful and premeditated with malice.'},
-        [11] = {title = 'Accessory to First Degree Murder', class = 'Felony', id = 'P.C. 1011', months = 0, fine = 0, color = 'red', description = 'Being present and or participating in the act of parent charge'},
-        [12] = {title = 'Murder of a Public Servant or Peace Officer', class = 'Felony', id = 'P.C. 1012', months = 0, fine = 0, color = 'red', description = 'Any intentional killing that is done to a government employee'},
-        [13] = {title = 'Attempted Murder of a Public Servant or Peace Officer', class = 'Felony', id = 'P.C. 1013', months = 65, fine = 10000, color = 'red', description = 'Any attacks that are done to a government employee with the intent to cause death'},
-        [14] = {title = 'Accessory to the Murder of a Public Servant or Peace Officer', class = 'Felony', id = 'P.C. 1014', months = 0, fine = 0, color = 'red', description = 'Being present and or participating in the act of parent charge'},
-        [15] = {title = 'Unlawful Imprisonment', class = 'Misdemeanor', id = 'P.C. 1015', months = 10, fine = 600, color = 'green', description = 'The act of taking another against their will and holding them for an extended period of time'},
-        [16] = {title = 'Kidnapping', class = 'Felony', id = 'P.C. 1016', months = 15, fine = 900, color = 'orange', description = 'The act of taking another against their will for a short period of time'},
-        [17] = {title = 'Accessory to Kidnapping', class = 'Felony', id = 'P.C. 1017', months = 7, fine = 450, color = 'orange', description = 'Being present and or participating in the act of parent charge'},
-        [18] = {title = 'Attempted Kidnapping', class = 'Felony', id = 'P.C. 1018', months = 10, fine = 450, color = 'orange', description = 'The act of trying to take someone against their will'},
-        [19] = {title = 'Hostage Taking', class = 'Felony', id = 'P.C. 1019', months = 20, fine = 1200, color = 'orange', description = 'The act of taking another against their will for personal gain'},
-        [20] = {title = 'Accessory to Hostage Taking', class = 'Felony', id = 'P.C. 1020', months = 10, fine = 600, color = 'orange', description = 'Being present and or participating in the act of parent charge'},
-        [21] = {title = 'Unlawful Imprisonment of a Public Servant or Peace Officer.', class = 'Felony', id = 'P.C. 1021', months = 25, fine = 4000, color = 'orange', description = 'The act of taking a government employee against their will for an extended period of time'},
-        [22] = {title = 'Criminal Threats', class = 'Misdemeanor', id = 'P.C. 1022', months = 5, fine = 500, color = 'orange', description = 'The act of stating the intent to commit a crime against another'},
-        [23] = {title = 'Reckless Endangerment', class = 'Misdemeanor', id = 'P.C. 1023', months = 10, fine = 1000, color = 'orange', description = 'The act of disregarding safety of another which may place another in danger of death or bodily injury'},
-        [24] = {title = 'Gang Related Shooting', class = 'Felony', id = 'P.C. 1024', months = 30, fine = 2500, color = 'red', description = 'The act in which a firearm is discharged in relation to gang activity'},
-        [25] = {title = 'Cannibalism', class = 'Felony', id = 'P.C. 1025', months = 0, fine = 0, color = 'red', description = 'The act in which a persons consumes the flesh of another willingly'},
-        [26] = {title = 'Torture', class = 'Felony', id = 'P.C. 1026', months = 40, fine = 4500, color = 'red', description = 'The act of causing harm to another to extract informaion and or for self enjoyment'},
+        [1] = {title = 'Murder', class = 'Strictly Indictable', id = 'S. 18 C.A.', months = 50, fine = 80000, color = 'red', description = 'Section 18 Crimes Act (NSW) - Where an intentional voluntary act of the accused causes the death of the deceased'},
+        [2] = {title = 'Murder emergency services worker', class = 'Strictly Indictable', id = 'S. 18 C.A.', months = 60, fine = 90000, color = 'red', description = 'Section 18 Crimes Act (NSW) Where an intentional voluntary act of the accused causes the death of the an emergency services worker'},
+        [3] = {title = 'Attempted Murder', class = 'Strictly Indictable', id = 'S. 27 C.A.', months = 40, fine = 70000, color = 'red', description = 'Section 27 Crimes Act (NSW) - An attempted intentional voluntary act to cause the death of a person'},
+        [4] = {title = 'Att. Murder emergency services worker', class = 'Strictly Indictable', id = 'S. 27 C.A.', months = 50, fine = 80000, color = 'red', description = 'Section 27 Crimes Act (NSW) - An attempted intentional voluntary act to cause the death of a person an emergency services worker'},
+        [5] = {title = 'Manslaughter', class = 'Strictly Indictable', id = 'S. 18 C.A.', months = 30, fine = 30000, color = 'red', description = 'Section 18 Crimes Act (NSW) - A reckless act that causes the death of a person'},
+        [6] = {title = 'Conspiring to Commit Murder', class = 'Strictly Indictable', id = 'S. 26 C.A.', months = 30, fine = 50000, color = 'red' , description = 'Section 26 Crimes Act (NSW) - Entering into an agreement to kill another person'},
+        [7] = {title = 'Assault Causing Death', class = 'Strictly Indictable', id = 'S. 25A C.A.', months = 30, fine = 50000, color = 'red' , description = 'Section 25A Crimes Act (NSW) - Intentionally and unlawully assaulting or hitting another person causing their death '},
+        [8] = {title = 'Intentional Wounding or grevious bodily harm', class = 'Indictable', id = 'S. 33 C.A.', months = 30, fine = 5000, color = 'red', description = 'Section 33 Crimes Act (NSW) - An attempted intentional voluntary act to cause the death of a person'},
+        [9] = {title = 'Reckless grevious bodily harm or wounding', class = 'Indictable', id = 'S. 35 C.A.', months = 30, fine = 50000, color = 'orange', description = 'Section 35 Crimes Act (NSW) - Grevious bodily harm is defined as very serious harm, incuding permanent or serious disfigurement, destruction of a foetus, and any grevious bodily disease. Wounding is an injury involving the breaking or cutting o the skin.'},
+        [10] = {title = 'Spiking Drink or Food', class = 'Indictable', id = 'S. 38A C.A.', months = 20, fine = 10000, color = 'orange', description = 'Section 38A Crimes Act (NSW) - Causing another person to consume drink or food containing an intoxicating substance that they are not aware of and intends that person to be harmed. Harm includes an impairment of the senses or understanding of a person that the person might reasonably be expected to object to in the circumstances.'},
+        [11] = {title = 'Assault occassioning actual bodily harm', class = 'Indictable', id = 'S. 59 C.A.', months = 20, fine = 10000, color = 'orange'},
+        [12] = {title = 'Assault during public disorder', class = 'Indictable', id = 'S. 59A C.A.', months = 20, fine = 10000, color = 'orange', description = 'Section 59A Crimes Act (NSW) - Public disorder means a riot or other civil disturbance that gives rise to a serious risk to public safety, whether at a single location or resulting from a series of incidents in the same or different locations, and includes a riot or other civil disturbance at the following'},
+        [13] = {title = 'Assault police in execution of duty', class = 'Indictable', id = 'S. 60(1) C.A.', months = 20, fine = 10000, color = 'orange', description = 'Section 60(1) Crimes Act (NSW) -  A person who assaults, throws a missile at, stalks, harasses or intimidates a police officer while in the execution of the officers duty, although no actual bodily harm is occasioned to the officer, is guilty of an offense'},
+        [14] = {title = 'Throw missile at Police in exec. of duty', class = 'Indictable', id = 'S. 60(1) C.A.', months = 15, fine = 10000, color = 'orange', description = 'Section 60(1) Crimes Act (NSW) -  A person who assaults, throws a missile at, stalks, harasses or intimidates a police officer while in the execution of the officers duty, although no actual bodily harm is occasioned to the officer, is guilty of an offense'},
+        [15] = {title = 'Stalk/Harrass/Intimidate Police in exec. of duty', class = 'Indictable', id = 'S. 60(1) C.A.', months = 20, fine = 10000, color = 'orange', description = 'Section 60(1) Crimes Act (NSW) -  A person who assaults, throws a missile at, stalks, harasses or intimidates a police officer while in the execution of the officers duty, although no actual bodily harm is occasioned to the officer, is guilty of an offense'},
+        [16] = {title = 'Assault police causing bodily harm', class = 'Indictable', id = 'S. 60(2) C.A.', months = 20, fine = 15000, color = 'orange', description = 'Section 60(2) Crimes Act (NSW) - A person who assaults a police officer while in the execution of the officers duty, and by the assault occasions actual bodily harm, is guilty of an offense'},
+        [17] = {title = 'Kidnapping', class = 'Strictly Indictable', id = 'S. 86 C.A.', months = 30, fine = 50000, color = 'red', description = 'Section 86 Crimes Act (NSW) - Taking or detaning a person without their consent with the intention of holding the person to ransom, or committing a serious indictable offense, or obtaining any other advantage'},
+        [18] = {title = 'Blackmail', class = 'Indictable', id = 'S. 249K C.A.', months = 10, fine = 10000, color = 'orange', description = 'Section 249K Crimes Act (NSW) - A person who makes any unwarranted demand with menaces, with the intention of obtaining a gain or causing a loss, or with the intention of influencing the exercise of public duty. Menaces include any express, implied, or general threat of any action that is detrimental or unpleasant'},
+        [19] = {title = 'Common Assault', class = 'Indictable', id = 'S. 61 C.A.', months = 10, fine = 10000, color = 'orange', description = 'Section 61 Crimes Act (NSW) - Whosoever assaults any person, although not occasioning actual bodily harm, shall be guilty of an offence'},
+        [20] = {title = 'Stalking', class = 'Indictable', id = 'S13 C(DPV) Act', months = 20, fine = 10000, color = 'orange', description = 'Section 13 Crimes (Domestic and Personal Violence) Act 2007(NSW) - the following of a person about or the watching or frequenting of the vicinity of, or an approach to a person’s place of residence, business or work or any place that a person frequents for the purposes of any social or leisure activity. Stalking involves a persistent course of conduct or actions by a person which are intended to maintain contact with or exercise power and control over another person. These actions cause distress, loss of control, fear or harassment to another person and occur more than once.'},
+        [21] = {title = 'Intimidation', class = 'Indictable', id = 'S. 7 C(DPV) Act', months = 20, fine = 10000, color = 'orange', description = 'Section 13 Crimes (Domestic and Personal Violence) Act 2007 (NSW) - A person who stalks or intimidates another person with the intention of causing the other person to fear physical or mental harm is guilty of an offence.'},
+
     },
+     -- Theft / Burglary
     [2] = {
-        [1] = {title = 'Petty Theft', class = 'Infraction', id = 'P.C. 2001', months = 0, fine = 250, color = 'green', description = 'The theft of property below $50 amount'},
-        [2] = {title = 'Grand Theft', class = 'Misdemeanor', id = 'P.C. 2002', months = 10, fine = 600, color = 'green', description = 'Theft of property above $700'},
-        [3] = {title = 'Grand Theft Auto A', class = 'Felony', id = 'P.C. 2003', months = 15, fine = 900, color = 'green', description = 'The act of stealing a vehicle that belongs to someone else without permission'},
-        [4] = {title = 'Grand Theft Auto B', class = 'Felony', id = 'P.C. 2004', months = 35, fine = 3500, color = 'green', description = 'The act of stealing a vehicle that belongs to someone else without permission while armed'},
-        [5] = {title = 'Carjacking', class = 'Felony', id = 'P.C. 2005', months = 30, fine = 2000, color = 'orange', description = 'The act of someone forcefully taking a vehicle from its occupants'},
-        [6] = {title = 'Burglary', class = 'Misdemeanor', id = 'P.C. 2006', months = 10, fine = 500, color = 'green', description = 'The act of entering into a building illegally with intent to commit a crime, especially theft.'},
-        [7] = {title = 'Robbery', class = 'Felony', id = 'P.C. 2007', months = 25, fine = 2000, color = 'green', description = 'The action of taking property unlawfully from a person or place by force or threat of force.'},
-        [8] = {title = 'Accessory to Robbery', class = 'Felony', id = 'P.C. 2008', months = 12, fine = 1000, color = 'green', description = 'Being present and or participating in the act of parent charge'},
-        [9] = {title = 'Attempted Robbery', class = 'Felony', id = 'P.C. 2009', months = 20, fine = 1000, color = 'green', description = 'The action of attempting property unlawfully from a person or place by force or threat of force.'},
-        [10] = {title = 'Armed Robbery', class = 'Felony', id = 'P.C. 2010', months = 30, fine = 3000, color = 'orange', description = 'The action of taking property unlawfully from a person or place by force or threat of force while armed.'},
-        [11] = {title = 'Accessory to Armed Robbery', class = 'Felony', id = 'P.C. 2011', months = 15, fine = 1500, color = 'orange', description = 'Being present and or participating in the act of parent charge'},
-        [12] = {title = 'Attempted Armed Robbery', class = 'Felony', id = 'P.C. 2012', months = 25, fine = 1500, color = 'orange', description = 'The action of attempting property unlawfully from a person or place by force or threat of force while armed.'},
-        [13] = {title = 'Grand Larceny', class = 'Felony', id = 'P.C. 2013', months = 45, fine = 7500, color = 'orange', description = 'Theft of personal property having a value above a legally specified amount.'},
-        [14] = {title = 'Leaving Without Paying', class = 'Infraction', id = 'P.C. 2014', months = 0, fine = 500, color = 'green', description = 'The act of leaving an establishment without paying for provided service'},
-        [15] = {title = 'Possession of Nonlegal Currency', class = 'Misdemeanor', id = 'P.C. 2015', months = 10, fine = 750, color = 'green', description = 'Being in possession of stolen currency'},
-        [16] = {title = 'Possession of Government-Issued Items', class = 'Misdemeanor', id = 'P.C. 2016', months = 15, fine = 1000, color = 'green', description = 'Being in possession of Items only acquireable by government employees'},
-        [17] = {title = 'Possession of Items Used in the Commission of a Crime', class = 'Misdemeanor', id = 'P.C. 2017', months = 10, fine = 500, color = 'green', description = 'Being in possession of Items that were previously used to commit crimes'},
-        [18] = {title = 'Sale of Items Used in the Commission of a Crime', class = 'Felony', id = 'P.C. 2018', months = 15, fine = 1000, color = 'orange', description = 'The act of selling items that were previously used to commit crimes'},
-        [19] = {title = 'Theft of an Aircraft', class = 'Felony', id = 'P.C. 2019', months = 20, fine = 1000, color = 'green', description = 'The act of stealing an aircraft'},
+
+        [1] = {title = 'Robbery', class = 'Indictable', id = 'S. 94 C.A.', months = 30, fine = 40000, color = 'orange', description = 'Section 94 Crimes Act (NSW) - Robbery is the act of unlawfully taking property from a person by force or the threat of force or by putting the victim in fear.'},
+        [2] = {title = 'Attempted Robbery', class = 'Indictable', id = 'S. 94 C.A.', months = 30, fine = 30000, color = 'orange', description = 'Section 94 Crimes Act (NSW) - Robbery is the act of unlawfully taking property from a person by force or the threat of force or by putting the victim in fear.'},
+        [3] = {title = 'Aggravated Robbery', class = 'Indictable', id = 'S. 95 C.A.', months = 40, fine = 50000, color = 'orange', description = 'Section 95 Crimes Act (NSW) - Robbery causing a person to suffer physical injury, bodily harm, or depriving a person of their liberty whilst doing so.'},
+        [4] = {title = 'Burglary (Break and Enter)', class = 'Indictable', id = 'S. 109 C.A.', months = 20, fine = 10000, color = 'orange', description = 'Section 109 Crimes Act (NSW) - Breaking and entering a dwelling-house or other building and committing any serious indictable offence (i.e. breaking into a house and stealing a TV)'},
+        [5] = {title = 'Armed w/ intent to commit ind. offence', class = 'Indictable', id = 'S. 114 C.A.', months = 10, fine = 10000, color = 'orange', description = 'Section 114 Crimes Act (NSW) - Armed with a weapon or instrument with the intent of committing an indictable offense (i.e. Using a pistol to rob a person)'},
+        [6] = {title = 'Theft', class = 'Indictable', id = 'S. 117 C.A.', months = 10, fine = 10000, color = 'orange', description = 'Section 117 Crimes Act (NSW) - Intentionally, dishonestly, taking property belonging to another without consent with the intent to permanently deprive that person of that property. Having a claim of right is a defence to the charge which is where you genuinely believed you were legally entitled to the property'},
+        [7] = {title = 'Stealing aircraft', class = 'Indictable', id = 'S. 154B C.A.', months = 30, fine = 30000, color = 'orange', description = 'Section 154B Crimes Act (NSW) - Directly or indirectly taking or exercising control of an aircraft without lawful excuse'},
+        [8] = {title = 'Stealing firearms', class = 'Indictable', id = 'S. 154D C.A.', months = 30, fine = 30000, color = 'orange', description = 'Section 154D Crimes Act (NSW) - Taking and carrying away of a firearm without the owners permission, and without any intention of returning it.'},
+        [9] = {title = 'Stealing motor vehicle, vessel or trailer (NPC)', class = 'Summary', id = 'S. 154F C.A.', months = 15, fine = 1500, color = 'green', description = 'Section 154F Crimes Act NSW - Stealing a vehicle belonging to an NPC'},
+        [10] = {title = 'Stealing motor vehicle, vessel or trailer (Player)', class = 'Indictable', id = 'S. 154F C.A.', months = 15, fine = 8000, color = 'orange', description = 'Section 154F Crimes Act NSW - Stealing a vehicle belonging to a player'},
+        [11] = {title = 'Fraud', class = 'Indictable', id = 'S. 192E C.A.', months = 15, fine = 8000, color = 'orange', description = 'Section 192E Crimes Act (NSW) - Obtaining property or financial advantage by deception'},
+        [12] = {title = 'Possess ID w/ intent to commit ind. offence', class = 'Indictable', id = 'S. 192K C.A.', months = 15, fine = 5000, color = 'orange', description = 'Section 192K Crimes Act (NSW) - A person who possesses identification information with the intention of committing, or of facilitating the commission of, an indictable offence is guilty of an offence'},
+        [13] = {title = 'Possess equip. to make false ID', class = 'Indictable', id = 'S. 192L C.A.', months = 15, fine = 5000, color = 'orange', description = 'Section 192L Crimes Act (NSW) - A person who possesses any equipment, material or other thing that is capable of being used to make a document or other thing containing identification information, and intends that the document or other thing made will be used to commit, or to facilitate the commission of, an indictable offence'},
+        [14] = {title = 'Money Laundering', class = 'Indictable', id = 'S. 193B C.A.', months = 25, fine = 25000, color = 'orange', description = 'Section 193B Crimes Act (NSW) - A person who deals with proceeds of crime, knowing that it is proceeds of crime, and intending to conceal that it is proceeds of crime, is guilty of an offence'},
+        [15] = {title = 'Deal w/ suspected proceeds of crime (<100k)', class = 'Summary', id = 'S. 193C (2) C.A.', months = 10, fine = 15000, color = 'green', description = 'Section 193C(2) Crimes Act (NSW) - A person deals with property and there are reasonable grounds to suspect the property is proceeds of crime. Proceeds of crime includes money/property derived from crime (i.e. drug trafficking). If there are reasonable grounds to suspect that it is proceeds of crime, it is an offence to deal with it. Ignorance is no excuse'},
+        [16] = {title = 'Deal w/ suspected proceeds of crime (>100k)', class = 'Indictable', id = 'S. 193C (1) C.A.', months = 25, fine = 20000, color = 'orange', description = 'Section 193C(1) Crimes Act (NSW) - A person deals with property and there are reasonable grounds to suspect the property is proceeds of crime. Proceeds of crime includes money/property derived from crime (i.e. drug trafficking). If there are reasonable grounds to suspect that it is proceeds of crime, it is an offence to deal with it. Ignorance is no excuse'},
+        [17] = {title = 'Corrupting Betting Outcome of Event', class = 'Summary', id = 'S. 193H C.A.', months = 15, fine = 15000, color = 'green', description = 'Section 193H Crimes Act (NSW) - Knowingly or recklessly engaging in conduct that corrupted a betting outcome to cause financial advantage or disadvantage'},
+        [18] = {title = 'Using false document', class = 'Indictable', id = 'S. 254 C.A.', months = 10, fine = 10000, color = 'orange', description = 'Section 254 Crimes Act (NSW) - A person who uses a false document, knowing that it is false, with the intention of inducing some person to accept it as genuine, and because of its being accepted as genuine, obtaining any property belonging to another or, obtaining any financial advantage or causing any financial disadvantage, or influencing the exercise of a public duty'},
+        [19] = {title = 'Possession of false document', class = 'Indictable', id = 'S. 255 C.A.', months = 10, fine = 10000, color = 'orange', description = 'Section 255 Crimes Act (NSW) - A person who possesses a false document, knowing that it is false, with the intention of inducing some person to accept it as genuine, and because of its being accepted as genuine, obtaining any property belonging to another or, obtaining any financial advantage or causing any financial disadvantage, or influencing the exercise of a public duty'},
+        [20] = {title = 'Computer Hacking', class = 'Indictable', id = 'S. 308C C.A.', months = 15, fine = 10000, color = 'orange', description = 'Section 308C Crimes Act (NSW) - A person who causes any unauthorised computer function, knowing it is unauthorised, with the intention of committing a serious indictable offfence or facilitating the commission of a serious indicatable offence'},
+        [21] = {title = 'Posession of data for computer offence', class = 'Indictable', id = 'S. 308F C.A.', months = 15, fine = 10000, color = 'orange', description = 'Section 308F Crimes Act (NSW) - Possessing or being in control of data with the intention of committing or facilitating a serious computer offence (i.e. possessing a Trojan USB stick)'},
+        [22] = {title = 'Unauthorised access to restricted data', class = 'Summary', id = 'S. 308H C.A.', months = 15, fine = 5000, color = 'green', description = 'Section 308H (NSW) - A person who intentionally causes any unauthorised access to, or modification of restricted data held in a computer, knowing that access or modification is unauthorised. Restricted data means data held in a computer, being data to which access is restricted by an access control system associated with a function of the computer.'},
+        [23] = {title = 'Unauthorised Entry to Vehicle or Boat', class = 'Summary', id = 'S. 6A S.O.A', months = 0, fine = 2500, color = 'green', description = 'Section 6A Summary Offences Act (NSW) - A person must not, without reasonable excuse (proof of which lies on the person), enter any vehicle or boat in a public place without the consent of the owner or lawful occupier of the vehicle or boat.'},
+
     },
+
+        --  Drugs
     [3] = {
-        [1] = {title = 'Impersonating', class = 'Misdemeanor', id = 'P.C. 3001', months = 15, fine = 1250, color = 'green', description = 'The action of falsely identifying as another person to deceive'},
-        [2] = {title = 'Impersonating a Peace Officer or Public Servant', class = 'Felony', id = 'P.C. 3002', months = 25, fine = 2750, color = 'green', description = 'The action of falsely identifying as a government employee to deceive'},
-        [3] = {title = 'Impersonating a Judge', class = 'Felony', id = 'P.C. 3003', months = 0, fine = 0, color = 'green', description = 'The action of falsely identifying as a Judge to deceive'},
-        [4] = {title = 'Possession of Stolen Identification', class = 'Misdemeanor', id = 'P.C. 3004', months = 10, fine = 750, color = 'green', description = 'To have another persons Identification without consent'},
-        [5] = {title = 'Possession of Stolen Government Identification', class = 'Misdemeanor', id = 'P.C. 3005', months = 20, fine = 2000, color = 'green', description = 'To have the identification of a government employee without consent'},
-        [6] = {title = 'Extortion', class = 'Felony', id = 'P.C. 3006', months = 20, fine = 900, color = 'orange', description = 'To threaten or cause harm to a person or property for financial gain'},
-        [7] = {title = 'Fraud', class = 'Misdemeanor', id = 'P.C. 3007', months = 10, fine = 450, color = 'green', description = 'To deceive another for financial gain'},
-        [8] = {title = 'Forgery', class = 'Misdemeanor', id = 'P.C. 3008', months = 15, fine = 750, color = 'green', description = 'To falsify legal documentation for personal gain'},
-        [9] = {title = 'Money Laundering', class = 'Felony', id = 'P.C. 3009', months = 0, fine = 0, color = 'red', description = 'The processing stolen money for legal currency'},
+        [1] = {title = 'Possess prohibited drug', class = 'Summary', id = 'S10 D.M.T.A', months = 15, fine = 7500, color = 'green', description = 'Section 10 Drugs Misuse and Trafficking Act (NSW) - Possession of less than 50 units of a prohibited drug'},
+        [2] = {title = 'Possess equip. for prohib. drug use', class = 'Summary', id = 'S. 11 D.M.T.A', months = 10, fine = 2000, color = 'green', description = 'Section 11 Drugs Misuse and Trafficking Act (NSW) - Possessing any item for administration of a prohibited drug (i.e. syringe, bongs etc)'},
+        [3] = {title = 'Forging prescriptions', class = 'Summary', id = 'S15 D.M.T.A', months = 25, fine = 7500, color = 'green'},
+        [4] = {title = 'Obtain prescription by false representation', class = 'Summary', id = 'S15 D.M.T.A', months = 25, fine = 7500, color = 'green'},
+        [5] = {title = 'Cultivate prohibited plant', class = 'Indictable', id = 'S23 D.M.T.A', months = 30, fine = 15000, color = 'orange'},
+        [6] = {title = 'Manufacture/produce prohibited drugs', class = 'Indictable', id = 'S24 D.M.T.A', months = 30, fine = 15000, color = 'orange', description = 'Section 24 Drugs Misuse and Trafficking Act (NSW) - A person who manufactures or produces, or who knowingly takes part in the manufacture or production of, a prohibited drug is guilty of an offence'},
+        [7] = {title = 'Possess precursors for production of prohibited drugs', class = 'Indictable', id = 'S24B D.M.T.A', months = 30, fine = 15000, color = 'orange', description = 'Section 24B Drugs Misuse and Trafficking Act (NSW) - Precursor means a substance that is a capable of being used to manufacture or produce a prohibited drug and specified in the regulations as a precursor. It is a defence to have a precursor for lawful activity or a reasonable excuse for possessing it'},
+        [8] = {title = 'Possess prohibited drug (traffickable)', class = 'Indictable', id = 'S25 D.M.T.A', months = 25, fine = 15000, color = 'orange', description = 'Possessing 50-300 units'},
+        [9] = {title = 'Supply prohibited drugs', class = 'Indictable', id = 'S25 D.M.T.A', months = 30, fine = 15000, color = 'orange'},
+        [10] = {title = 'Supply prohibited drugs (Commercial)', class = 'Indictable', id = 'S25 D.M.T.A', months = 40, fine = 30000, color = 'orange', description = '300 units to 2000 units. Possessing commercial quantities is deemed for supply. Police do not have to see someone supplying commercial amounts to charge for supply, possession of commercial quantities is enough to prove supply. Supply includes sell and distribute, and also includes agreeing to supply, or offering to supply, or keeping or having in possession for supply, or sending, forwarding, delivering or receiving for supply, or authorising, directing, causing, suffering, permitting or attempting any of those acts or things.'},
+        [11] = {title = 'Supply prohibited drugs (Large Commercial)', class = 'Strictly Indictable', id = 'S25 D.M.T.A', months = 50, fine = 50000, color = 'red', description = '2000 units or more. Possessing commercial quantities is deemed for supply. Police do not have to see someone supplying commercial amounts to charge for supply, possession of commercial quantities is enough to prove supply. Supply includes sell and distribute, and also includes agreeing to supply, or offering to supply, or keeping or having in possession for supply, or sending, forwarding, delivering or receiving for supply, or authorising, directing, causing, suffering, permitting or attempting any of those acts or things.'},
     },
+        -- Property Damage / Environment
     [4] = {
-        [1] = {title = 'Trespassing', class = 'Misdemeanor', id = 'P.C. 4001', months = 10, fine = 450, color = 'green', description = 'For a person to be within the bounds of a location of which they are not legally allowed'},
-        [2] = {title = 'Felony Trespassing', class = 'Felony', id = 'P.C. 4002', months = 15, fine = 1500, color = 'green', description = 'For a person to have repeatedly entered the bounds of a location of which they are knowingly not legally allowed'},
-        [3] = {title = 'Arson', class = 'Felony', id = 'P.C. 4003', months = 15, fine = 1500, color = 'orange', description = 'The use if fire and accelerants to will and maliciously destroy, harm or cause death to a person or property'},
-        [4] = {title = 'Vandalism', class = 'Infraction', id = 'P.C. 4004', months = 0, fine = 300, color = 'green', description = 'The willful destruction of property'},
-        [5] = {title = 'Vandalism of Government Property', class = 'Felony', id = 'P.C. 4005', months = 20, fine = 1500, color = 'green', description = 'The willful destruction of government property'},
-        [6] = {title = 'Littering', class = 'Infraction', id = 'P.C. 4006', months = 0, fine = 200, color = 'green', description = 'The willful discard of refuse into to open and not in designated bin'},
+        [1] = {title = 'Destroying or damaging property', class = 'Indictable', id = 'S. 195 C.A.', months = 10, fine = 10000, color = 'orange'},
+        [2] = {title = 'Arson', class = 'Indictable', id = 'S. 195 C.A.', months = 20, fine = 10000, color = 'orange'},
+        [3] = {title = 'Marking Premises or Property (Graffiti)', class = 'Summary', id = 'S. 4 G.C.A.', months = 0, fine = 5000, color = 'green', description = 'Section 4 Graffiti Control Act (NSW) - A person must not, without reasonable excuse (proof of which lies on the person), intentionally mark any premises or other property, unless the person has first obtained the consent of the owner, occupier, or person in charge of the premises'},
+        [4] = {title = 'Poss. graffiti implement w/ intent to mark graffiti', class = 'Summary', id = 'S. 5 G.C.A.', months = 20, fine = 1000, color = 'green', description = 'Section 5 Graffiti Control Act (NSW) - A person must not have any graffiti implement in the persons possession with the intention that it be used to commit an offence. Graffiti implement means spraypaint, marker pen, or any implement designed or modified to produce a mark that is not readily removable by wiping or by use of water or detergent'},
+        [5] = {title = 'Littering', class = 'Summary', id = 'S145 P.O.T.E.A', months = 0, fine = 1000, color = 'green'},
+        [6] = {title = 'Aggravated Littering', class = 'Summary', id = 'S145A P.O.T.E.A', months = 0, fine = 2000, color = 'green', description = 'SECT 145A PROTECTION OF THE ENVIRONMENT OPERATIONS ACT (NSW) - Littering is aggravated when it caused or contributed to appreciable danger or harm to any persons, animals, premises or property, or was reasonably likely to cause or contribute to such danger or harm (whether or not any such danger or harm was actually caused)'},
+        [7] = {title = 'Unlicensed Hunting', class = 'Summary', id = 'S16 G.F.A.C.A', months = 0, fine = 5000, color = 'green', description = 'SECT 16 GAME AND FERAL ANIMAL CONTROL ACT (NSW) - A person who hunts a game animal on any private land or public land is guilty of an offence unless the person is the holder of a game hunting licence.'},
+        [8] = {title = 'Contravene Hunting Licence Conditions', class = 'Summary', id = 'S23 G.F.A.C.A', months = 0, fine = 5000, color = 'green'},
+        [9] = {title = 'Harm protected species', class = 'Summary', id = 'S. 2.1 BDCA', months = 0, fine = 15000, color = 'green', description = 'Section 2.1 Biodiversity Conservation Act (NSW) - Harming or attempting to harm a protected animal or threatened species'},
+        [10] = {title = 'Dealing in protected animals or plants', class = 'Summary', id = 'S. 2.5 BDCA', months = 0, fine = 25000, color = 'green', description = 'Section 2.1 Biodiversity Conservation Act (NSW) - Dealing or attempting to deal with protected animals, plants or threatened species.'},
+        [11] = {title = 'Misconduct with regard to corpses', class = 'Indictable', id = 'S. 81C C.A.', months = 10, fine = 10000, color = 'orange', description = 'Section 81C Crimes Act (NSW) - Any person who indecently interferes with any dead human body, or improperly interferes with, or offers any indignity to, any dead human body or human remains (whether buried or not) shall be liable to imprisonment for 10 months '},
+
     },
+    -- Weapons
     [5] = {
-        [1] = {title = 'Bribery of a Government Official', class = 'Felony', id = 'P.C. 5001', months = 20, fine = 3500, color = 'green', description = 'the use of money, favors and or property to gain favor with a government official'},
-        [2] = {title = 'Anti-Mask Law', class = 'Infraction', id = 'P.C. 5002', months = 0, fine = 750, color = 'green', description = 'Wearing a mask in a prohibited zone'},
-        [3] = {title = 'Possession of Contraband in a Government Facility', class = 'Felony', id = 'P.C. 5003', months = 25, fine = 1000, color = 'green', description = 'Being in possession of items that are illegal while within a government building'},
-        [4] = {title = 'Criminal Possession of Stolen Property', class = 'Misdemeanor', id = 'P.C. 5004', months = 10, fine = 500, color = 'green', description = 'Being in possession of items stolen knowingly or not'},
-        [5] = {title = 'Escaping', class = 'Felony', id = 'P.C. 5005', months = 10, fine = 450, color = 'green', description = 'The action of willful and knowingly leaving custody while legally being arrest, detained or in jail'},
-        [6] = {title = 'Jailbreak', class = 'Felony', id = 'P.C. 5006', months = 30, fine = 2500, color = 'orange', description = 'The action of leaving state custody from a state or county detention facility'},
-        [7] = {title = 'Accessory to Jailbreak', class = 'Felony', id = 'P.C. 5007', months = 25, fine = 2000, color = 'orange', description = 'Being present and or participating in the act of parent charge'},
-        [8] = {title = 'Attempted Jailbreak', class = 'Felony', id = 'P.C. 5008', months = 20, fine = 1500, color = 'orange', description = 'The willful and intentional attempted escape from a state or county detention facility'},
-        [9] = {title = 'Perjury', class = 'Felony', id = 'P.C. 5009', months = 0, fine = 0, color = 'green', description = 'The action of stating falsities while legally bound to speak the truth'},
-        [10] = {title = 'Violation of a Restraining Order', class = 'Felony', id = 'P.C. 5010', months = 20, fine = 2250, color = 'green', description = 'The willful and knowing infringement upon court ordered protective documentation'},
-        [11] = {title = 'Embezzlement', class = 'Felony', id = 'P.C. 5011', months = 45, fine = 10000, color = 'green', description = 'The willful and knowingly movement of funds from non personal bank accounts to personal bank accounts for personal gain'},
-        [12] = {title = 'Unlawful Practice', class = 'Felony', id = 'P.C. 5012', months = 15, fine = 1500, color = 'orange', description = 'The action of performing a service without proper legal licensing and approval'},
-        [13] = {title = 'Misuse of Emergency Systems', class = 'Infraction', id = 'P.C. 5013', months = 0, fine = 600, color = 'orange', description = 'Use of government emergency equipment for its non-intended purpose'},
-        [14] = {title = 'Conspiracy', class = 'Misdemeanor', id = 'P.C. 5014', months = 10, fine = 450, color = 'green', description = 'The act of planning a crime but not yet commiting the crime'},
-        [15] = {title = 'Violating a Court Order', class = 'Misdemeanor', id = 'P.C. 5015', months = 0, fine = 0, color = 'orange', description = 'The infringement of court ordered documentation'},
-        [16] = {title = 'Failure to Appear', class = 'Misdemeanor', id = 'P.C. 5016', months = 0, fine = 0, color = 'orange', description = 'When someone who is legally bound to appear in court does not do so'},
-        [17] = {title = 'Contempt of Court', class = 'Felony', id = 'P.C. 5017', months = 0, fine = 0, color = 'orange', description = 'The disruption of court proceedings in a courtroom while it is in session (judicial decision)'},
-        [18] = {title = 'Resisting Arrest', class = 'Misdemeanor', id = 'P.C. 5018', months = 5, fine = 300, color = 'orange', description = 'The act of not allowing peace officers to take you into custody willingly'},
+        [1] = {title = 'Possess explosives', class = 'Indictable', id = 'S. 93FA (1) C.A.', months = 20, fine = 20000, color = 'orange'},
+        [2] = {title = 'Supply or make explosives', class = 'Indictable', id = 'S. 93FA(2) C.A.', months = 30, fine = 30000, color = 'orange'},
+        [3] = {title = 'Possess dangerous article', class = 'Summary', id = 'S. 93FB C.A.', months = 15, fine = 15000, color = 'green', description = 'Section 93FB Crimes Act (NSW) - Any person who in a public place possess anything (not being a firearm) capable of discharging by any means any irritant matter in liquid, powder, gas or chemical form or any dense smoke, or any substance capable of causing bodily harm, or fuse capable of use with an explosive or a detonator, or a detonator, or a distress signal, or distress flare, that operates by emitting a bright light'},
+        [4] = {title = 'Convey false info that person or property is in danger', class = 'Indictable', id = 'S. 93Q C.A.', months = 20, fine = 20000, color = 'orange', description = 'Section 93Q Crimes Act (NSW) - Example: Bomb threat - A person who conveys information  that the person knows to be false or misleading, and that is likely to make the person to whom the information is conveyed fear for the safety of a person or of property, or both is guilty of an offence'},
+        [5] = {title = 'Leave or send article w/ intent to cause alarm', class = 'Indictable', id = 'S. 93R C.A.', months = 20, fine = 20000, color = 'orange', description = 'Section 93R Crimes Act (NSW) - Example: Leaving a fake bomb somewhere -  A person who leaves in any place, or sends by any means, a substance or article, and who intends to induce a false belief that the substance or article is likely to be a danger to the safety of a person or of property, or both, is guilty of an offence'},
+        [6] = {title = 'Custody of knife in public place', class = 'Summary', id = 'S11C S.O.A', months = 0, fine = 5000, color = 'green', description = 'Section 11C Summary Offenses Act - A person must not, without reasonable excuse (proof of which lies on the person), have in his or her custody a knife in a public place or a school. Reasonable excuses include work, education, training, preparation of food, lawful entertainment or sport, exhibition of knives for retail or trade, wearing of an official uniform, genuine religious purposes. Self defence is NOT a reasonable excuse.'},
+        [7] = {title = 'Possess Prohibited Weapon', class = 'Summary', id = 'S. 7 Weapon Prohibition Act', months = 0, fine = 5000, color = 'green', description = 'Anything contained in Schedule 1 of the Weapons Prohibition Act - Includes: Body armor, batons, tasers, handcuffs, tyre deflation devices (spike strips), pepper spray, swords'},
+
+
+
     },
+    -- Public Order & Custody
     [6] = {
-        [1] = {title = 'Disobeying a Peace Officer', class = 'infraction', id = 'P.C. 6001', months = 0, fine = 750, color = 'green', description = 'The willful disregard of a lawful order'},
-        [2] = {title = 'Disorderly Conduct', class = 'Infraction', id = 'P.C. 6002', months = 0, fine = 250, color = 'green', description = 'Acting in a manner that creates a hazardous or physically offensive condition by any act which serves no legitimate purpose of the actor. '},
-        [3] = {title = 'Disturbing the Peace', class = 'infraction', id = 'P.C. 6003', months = 0, fine = 350, color = 'green', description = 'Action in a manner that causes unrest and disrupts public order'},
-        [4] = {title = 'False Reporting', class = 'Misdemeanor', id = 'P.C. 6004', months = 10, fine = 750, color = 'green', description = 'The act of reporting a crime that did not happen'},
-        [5] = {title = 'Harassment', class = 'Misdemeanor', id = 'P.C. 6005', months = 10, fine = 500, color = 'orange', description = 'The repeated disruption or verbal attacks of another person'},
-        [6] = {title = 'Misdemeanor Obstruction of Justice', class = 'Misdemeanor', id = 'P.C. 6006', months = 10, fine = 500, color = 'green', description = 'Acting in a way that hinders the process of Justice or lawful investigations'},
-        [7] = {title = 'Felony Obstruction of Justice', class = 'Felony', id = 'P.C. 6007', months = 15, fine = 900, color = 'green', description = 'Acting in a way that hinders the process of Justice or lawful investigations while using violence'},
-        [8] = {title = 'Inciting a Riot', class = 'Felony', id = 'P.C. 6008', months = 25, fine = 1000, color = 'orange', description = 'Causing civil unrest in a manner to incite a group to cause harm to people or property'},
-        [9] = {title = 'Loitering on Government Properties', class = 'Infraction', id = 'P.C. 6009', months = 0, fine = 500, color = 'green', description = 'When someone is present in a government proper for an extended period of time'},
-        [10] = {title = 'Tampering', class = 'Misdemeanor', id = 'P.C. 6010', months = 10, fine = 500, color = 'green', description = 'When someone willfully, knowingly and indirectly interfering with key points of a lawful investigation'},
-        [11] = {title = 'Vehicle Tampering', class = 'Misdemeanor', id = 'P.C. 6011', months = 15, fine = 750, color = 'green', description = 'The willful and knowing interference the normal function of a vehicle'},
-        [12] = {title = 'Evidence Tampering', class = 'Felony', id = 'P.C. 6012', months = 20, fine = 1000, color = 'green', description = 'The willful and knowing interference with evidence from a lawful investigation'},
-        [13] = {title = 'Witness Tampering', class = 'Felony', id = 'P.C. 6013', months = 0, fine = 0, color = 'green', description = 'The willful and knowing coaching or coercing of a witness in a lawful investigation'},
-        [14] = {title = 'Failure to Provide Identification', class = 'Misdemeanor', id = 'P.C. 6014', months = 15, fine = 1500, color = 'green', description = 'The act of not presenting identification when lawfully required to do so'},
-        [15] = {title = 'Vigilantism', class = 'Felony', id = 'P.C. 6015', months = 30, fine = 1500, color = 'orange', description = 'The act of engaging in enforcing the law with legal authority to do so'},
-        [16] = {title = 'Unlawful Assembly', class = 'Misdemeanor', id = 'P.C. 6016', months = 10, fine = 750, color = 'orange', description = 'when a large group gathers in a location that requires prior approval to do so'},
-        [17] = {title = 'Government Corruption', class = 'Felony', id = 'P.C. 6017', months = 0, fine = 0, color = 'red', description = 'The act of using political position and power for self gain'},
-        [18] = {title = 'Stalking', class = 'Felony', id = 'P.C. 6018', months = 40, fine = 1500, color = 'orange', description = 'When one person monitors another without their consent'},
-        [19] = {title = 'Aiding and Abetting', class = 'Misdemeanor', id = 'P.C. 6019', months = 15, fine = 450, color = 'orange', description = 'To assist someone in committing or to encourage someone to commit a crime'},
-        [20] = {title = 'Harboring a Fugitive', class = 'Misdemeanor', id = 'P.C. 6020', months = 10, fine = 1000, color = 'green', description = 'When someone willingly hides another who is wanted by the authorities'},
+        [1] = {title = 'Riot', class = 'Indictable', id = 'S. 93B C.A.', months = 20, fine = 10000, color = 'orange', description = 'Section 93B Crimes Act (NSW) - Where 12 or more persons who are present together use or threaten unlawful violence for a common purpose and the conduct of them (taken together) is such as would cause a person of reasonable firmness present at the scene to fear for his or her personal safety, each of the persons using unlawful violence for the common purpose is guilty of riot'},
+        [2] = {title = 'Affray', class = 'Indictable', id = 'S. 93C C.A.', months = 10, fine = 10000, color = 'orange', description = 'Section 93C Crimes Act (NSW) - A person who uses or threatens unlawful violence towards another and whose conduct is such as would cause a person of reasonable firmness present at the scene to fear for his or her personal safety is guilty of affray'},
+        [3] = {title = 'Participation in criminal groups', class = 'Indictable', id = 'S. 93T C.A.', months = 20, fine = 10000, color = 'orange', description = 'Section 93T Crimes Act (NSW) - Criminal group means 3 or more people who have the objective to obtain material benefits from serious indictable offences or commit serious violent offences. A person who participates in a criminal group is guilty of an offence if the person knows or ought reasonably to know it is a criminal group and that their participation contributes to the occurence of any criminal activity'},
+        [4] = {title = 'Conducting unlawful gambling operation', class = 'Summary', id = 'S. 93V C.A.', months = 10, fine = 10000, color = 'green'},
+        [5] = {title = 'Threatening/inciting violence on grounds of predjudice', class = 'Indictable', id = 'S. 93Z C.A.', months = 30, fine = 30000, color = 'orange', description = 'Section 93Z Crimes Act (NSW) -  A person who, by a public act, intentionally or recklessly threatens or incites violence on the grounds of race, religion, sexual orientation, gender identity or intersex or HIV/AIDS status'},
+        [6] = {title = 'Rescuing inmate from lawful custody', class = 'Indictable', id = 'S. 310B C.A.', months = 50, fine = 50000, color = 'orange'},
+        [7] = {title = 'Aiding escape', class = 'Indictable', id = 'S. 310C C.A.', months = 30, fine = 30000, color = 'orange'},
+        [8] = {title = 'Escape lawful custody', class = 'Indictable', id = 'S. 310D C.A.', months = 40, fine = 40000, color = 'orange'},
+        [9] = {title = 'Harbouring escapee', class = 'Indictable', id = 'S. 310G C.A.', months = 20, fine = 20000, color = 'orange', description = 'Section 310G Crimes Act (NSW) - Any person who knowingly harbours, maintains or employs an escaped inmate is guilty of an offence'},
+        [10] = {title = 'Offensive Conduct or Language', class = 'Summary', id = 'S. 4 S.O.A', months = 0, fine = 1500, color = 'green'},
+        [11] = {title = 'Obstructing Traffic', class = 'Summary', id = 'S. 6 S.O.A', months = 0, fine = 1500, color = 'green'},
+        [12] = {title = 'Obscene Exposure', class = 'Summary', id = 'S. 5 S.O.A', months = 0, fine = 1500, color = 'green'},
+        [13] = {title = 'Trespassing', class = 'Summary', id = 'S. 4 Inclosed Land Act', months = 10, fine = 3500, color = 'green'},
+        [14] = {title = 'Fail to comply with move on direction', class = 'Summary', id = 'S. 199 LEPRA', months = 15, fine = 5000, color = 'green'},
+        [15] = {title = 'Fail to leave licensed premises', class = 'Summary', id = 'S. 77 Liquor Act', months = 0, fine = 2000, color = 'green'}
+
+
     },
+    -- Obstruct Justice / Corruption
     [7] = {
-        [1] = {title = 'Misdemeanor Possession of Marijuana', class = 'Mask', id = 'P.C. 7001', months = 5, fine = 250, color = 'green', description = 'The possession of a quantity of marijuana in the amount of less the 4 blunts'},
-        [2] = {title = 'Felony manufacturing of Marijuana', class = 'Felony', id = 'P.C. 7002', months = 15, fine = 1000, color = 'red', description = 'The possession of a quantity of marijuana that is from manufacturing'},
-        [3] = {title = 'Cultivation of Marijuana A', class = 'Misdemeanor', id = 'P.C. 7003', months = 10, fine = 750, color = 'green', description = 'The possession of 4 or less marijuana plants'},
-        [4] = {title = 'Cultivation of Marijuana B', class = 'Felony', id = 'P.C. 7004', months = 30, fine = 1500, color = 'orange', description = 'The possession of 5 or more marijuana plants'},
-        [5] = {title = 'Possession of Marijuana with Intent to Distribute', class = 'Felony', id = 'P.C. 7005', months = 30, fine = 3000, color = 'orange', description = 'The possession of a quantity of Marijuana for distribution'},
-        [6] = {title = 'Misdemeanor Possession of Cocaine', class = 'Misdemeanor', id = 'P.C. 7006', months = 7, fine = 500, color = 'green', description = 'The possession of cocaine in a small quantity usually for personal use'},
-        [7] = {title = 'Felony manufacturing Possession of Cocaine', class = 'Felony', id = 'P.C. 7007', months = 25, fine = 1500, color = 'red', description = 'The possession of a quantity of cocaine that is from manufacturing'},
-        [8] = {title = 'Possession of Cocaine with Intent to Distribute', class = 'Felony', id = 'P.C. 7008', months = 35, fine = 4500, color = 'orange', description = 'The possession of a quantity of Cocaine for distribution'},
-        [9] = {title = 'Misdemeanor Possession of Methamphetamine', class = 'Misdemeanor', id = 'P.C. 7009', months = 7, fine = 500, color = 'green', description = 'The possession of methamphetamine in a small quantity usually for personal use'},
-        [10] = {title = 'Felony manufacturing Possession of Methamphetamine', class = 'Felony', id = 'P.C. 7010', months = 25, fine = 1500, color = 'red', description = 'The possession of a quantity of methamphetamine that is from manufacturing'},
-        [11] = {title = 'Possession of Methamphetamine with Intent to Distribute', class = 'Felony', id = 'P.C. 7011', months = 35, fine = 4500, color = 'orange', description = 'The possession of a quantity of Methamphetamine for distribution'},
-        [12] = {title = 'Misdemeanor Possession of Oxy / Vicodin', class = 'Felony', id = 'P.C. 7012', months = 7, fine = 500, color = 'green', description = 'The possession of oxy / vicodin in a small quantity usually for personal use without prescription'},
-        [13] = {title = 'Felony manufacturing Possession of Oxy / Vicodin', class = 'Felony', id = 'P.C. 7013', months = 25, fine = 1500, color = 'red', description = 'The possession of a quantity of oxy / vicodin that is from manufacturing'},
-        [14] = {title = 'Felony Possession of Oxy / Vicodin with Intent to Distribute', class = 'Felony', id = 'P.C. 7014', months = 35, fine = 4500, color = 'orange', description = 'The possession of a quantity of oxy / vicodin for distribution'},
-        [15] = {title = 'Misdemeanor Possession of Ecstasy', class = 'Misdemeanor', id = 'P.C. 7015', months = 7, fine = 500, color = 'green', description = 'The possession of ecstasy in a small quantity usually for personal use'},
-        [16] = {title = 'Felony manufacturing Possession of Ecstasy', class = 'Felony', id = 'P.C. 7016', months = 25, fine = 1500, color = 'red', description = 'The possession of a quantity of ecstasy that is from manufacturing'},
-        [17] = {title = 'Possession of Ecstasy with Intent to Distribute', class = 'Felony', id = 'P.C. 7017', months = 35, fine = 4500, color = 'orange', description = 'The possession of a quantity of ecstasy for distribution'},
-        [18] = {title = 'Misdemeanor Possession of Opium', class = 'Misdemeanor', id = 'P.C. 7018', months = 7, fine = 500, color = 'green', description = 'The possession of opium in a small quantity usually for personal use'},
-        [19] = {title = 'Felony manufacturing Possession of Opium', class = 'Felony', id = 'P.C. 7019', months = 25, fine = 1500, color = 'red', description = 'The possession of a quantity of opium that is from manufacturing'},
-        [20] = {title = 'Possession of Opium with Intent to Distribute', class = 'Felony', id = 'P.C. 7020', months = 35, fine = 4500, color = 'orange', description = 'The possession of a quantity of Opium for distribution'},
-        [21] = {title = 'Misdemeanor Possession of Adderall', class = 'Misdemeanor', id = 'P.C. 7021', months = 7, fine = 500, color = 'green', description = 'The possession of adderall in a small quantity usually for personal use without prescription'},
-        [22] = {title = 'Felony manufacturing Possession of Adderall', class = 'Felony', id = 'P.C. 7022', months = 25, fine = 1500, color = 'red', description = 'The possession of a quantity of adderall that is from manufacturing'},
-        [23] = {title = 'Possession of Adderall with Intent to Distribute', class = 'Felony', id = 'P.C. 7023', months = 35, fine = 4500, color = 'orange', description = 'The possession of a quantity of Adderall for distribution'},
-        [24] = {title = 'Misdemeanor Possession of Xanax', class = 'Misdemeanor', id = 'P.C. 7024', months = 7, fine = 500, color = 'green', description = 'The possession of xanax in a small quantity usually for personal use without prescription'},
-        [25] = {title = 'Felony manufacturing Possession of Xanax', class = 'Felony', id = 'P.C. 7025', months = 25, fine = 1500, color = 'red', description = 'The possession of a quantity of xanax that is from manufacturing'},
-        [26] = {title = 'Possession of Xanax with Intent to Distribute', class = 'Felony', id = 'P.C. 7026', months = 35, fine = 4500, color = 'orange', description = 'The possession of a quantity of Xanax for distribution'},
-        [27] = {title = 'Misdemeanor Possession of Shrooms', class = 'Misdemeanor', id = 'P.C. 7027', months = 7, fine = 500, color = 'green', description = 'The possession of shrooms in a small quantity usually for personal use'},
-        [28] = {title = 'Felony manufacturing Possession of Shrooms', class = 'Felony', id = 'P.C. 7028', months = 25, fine = 1500, color = 'red', description = 'The possession of a quantity of shrooms that is from manufacturing'},
-        [29] = {title = 'Possession of Shrooms with Intent to Distribute', class = 'Felony', id = 'P.C. 7029', months = 35, fine = 4500, color = 'orange', description = 'The possession of a quantity of Shrooms for distribution'},
-        [30] = {title = 'Misdemeanor Possession of Lean', class = 'Misdemeanor', id = 'P.C. 7030', months = 7, fine = 500, color = 'green', description = 'The possession of lean in a small quantity usually for personal use'},
-        [31] = {title = 'Felony manufacturing Possession of Lean', class = 'Felony', id = 'P.C. 7031', months = 25, fine = 1500, color = 'red', description = 'The possession of a quantity of lean that is from manufacturing'},
-        [32] = {title = 'Possession of Lean with Intent to Distribute', class = 'Felony', id = 'P.C. 7032', months = 35, fine = 4500, color = 'orange', description = 'The possession of a quantity of lean for distribution'},
-        [33] = {title = 'Sale of a controlled substance', class = 'Misdemeanor', id = 'P.C. 7033', months = 10, fine = 1000, color = 'green', description = 'The sale of a substance that is controlled by law'},
-        [34] = {title = 'Drug Trafficking', class = 'Felony', id = 'P.C. 7034', months = 0, fine = 0, color = 'red', description = 'The large scale movement of illegal drugs'},
-        [35] = {title = 'Desecration of a Human Corpse', class = 'Felony', id = 'P.C. 7035', months = 20, fine = 1500, color = 'orange', description = 'When someone harms, disturbs or destroys the remains of another person'},
-        [36] = {title = 'Public Intoxication', class = 'Infraction', id = 'P.C. 7036', months = 0, fine = 500, color = 'green', description = 'When someone is intoxicated above legal limit in public'},
-        [37] = {title = 'Public Indecency', class = 'Misdemeanor', id = 'P.C. 7037', months = 10, fine = 750, color = 'green', description = 'The act of someone exposing themself in a way that infringes in public morals'},
+        [1] = {title = 'Knowingly make false accusation', class = 'Indictable', id = 'S. 314 C.A.', months = 10, fine = 10000, color = 'orange'},
+        [2] = {title = 'Threatening or intimidating victims or witnesses', class = 'Indictable', id = 'S. 315A C.A.', months = 15, fine = 15000, color = 'orange'},
+        [3] = {title = 'Tampering with evidence', class = 'Indictable', id = 'S. 317 C.A.', months = 15, fine = 15000, color = 'orange'},
+        [4] = {title = 'Pervert the course of justice', class = 'Indictable', id = 'S. 319 C.A.', months = 15, fine = 15000, color = 'orange'},
+        [5] = {title = 'Perjury', class = 'Summary', id = 'S. 327 C.A.', months = 5, fine = 15000, color = 'green'},
+        [6] = {title = 'Fail to disclose identity', class = 'Summary', id = 'S. 12 LEPRA', months = 0, fine = 5000, color = 'green'},
+        [7] = {title = 'Provide false or misleading info about identity', class = 'Summary', id = 'S. 12 LEPRA', months = 0, fine = 5000, color = 'green'},
+        [8] = {title = 'Failure to remove face covering', class = 'Summary', id = 'S. 19B LEPRA', months = 0, fine = 2000, color = 'green'},
+        [9] = {title = 'Resist/Hinder Police', class = 'Summary', id = 'S. 39 LEPRA', months = 15, fine = 5000, color = 'green'},
+        [10] = {title = 'Incite Person to Resist/Hinder Police', class = 'Summary', id = 'S. 39 LEPRA', months = 15, fine = 5000, color = 'green'},
+        [11] = {title = 'Use/possess weapon to resist arrest etc', class = 'Indictable', id = 'S. 33B C.A.', months = 30, fine = 15000, color = 'orange'},
+        [12] = {title = 'Bribery', class = 'Indictable', id = 'Common Law', months = 30, fine = 15000, color = 'orange'},
+        [13] = {title = 'Fail to appear at court', class = 'Summary', id = 'S. 79 Bail Act', months = 30, fine = 15000, color = 'green'},
+        [14] = {title = 'Contempt of court', class = 'Summary', id = 'S. 24 Local Court Act', months = 15, fine = 10000, color = 'green'},
+        [15] = {title = 'Illegally record private conversation', class = 'Summary', id = 'S7 S.D.A.', months = 0, fine = 10000, color = 'green'},
+        [16] = {title = 'Breach Apprehended Violence Order (AVO)', class = 'Indictable', id = 'S14 C(DPV) Act', months = 20, fine = 10000, color = 'orange'},
+        [17] = {title = 'Contravene Community Corrections Order', class = 'Indictable', id = 'S107C C(A.O.S) Act', months = 30, fine = 10000, color = 'orange'},
+        [18] = {title = 'Impersonation of Police Officers', class = 'Indictable', id = 'S. 546D C.A.', months = 30, fine = 10000, color = 'orange'},
+        [19] = {title = 'Engage in legal practice by unqualified entity', class = 'Summary', id = 'S10 L.P.U.L', months = 10, fine = 10000, color = 'green'},
     },
+    -- Firearms
     [8] = {
-        [1] = {title = 'Criminal Possession of Weapon Class A', class = 'Felony', id = 'P.C. 8001', months = 10, fine = 500, color = 'green', description = 'Possession of a Class A firearm without licensing'},
-        [2] = {title = 'Criminal Possession of Weapon Class B', class = 'Felony', id = 'P.C. 8002', months = 15, fine = 1000, color = 'green', description = 'Possession of a Class B firearm without licensing'},
-        [3] = {title = 'Criminal Possession of Weapon Class C', class = 'Felony', id = 'P.C. 8003', months = 30, fine = 3500, color = 'green', description = 'Possession of a Class C firearm without licensing'},
-        [4] = {title = 'Criminal Possession of Weapon Class D', class = 'Felony', id = 'P.C. 8004', months = 25, fine = 1500, color = 'green', description = 'Possession of a Class D firearm without licensing'},
-        [5] = {title = 'Criminal Sale of Weapon Class A', class = 'Felony', id = 'P.C. 8005', months = 15, fine = 1000, color = 'orange', description = 'The act of selling a Class A firearm without licensing'},
-        [6] = {title = 'Criminal Sale of Weapon Class B', class = 'Felony', id = 'P.C. 8006', months = 20, fine = 2000, color = 'orange', description = 'The act of selling a Class B firearm without licensing'},
-        [7] = {title = 'Criminal Sale of Weapon Class C', class = 'Felony', id = 'P.C. 8007', months = 35, fine = 7000, color = 'orange', description = 'The act of selling a Class C firearm without licensing'},
-        [8] = {title = 'Criminal Sale of Weapon Class D', class = 'Felony', id = 'P.C. 8008', months = 30, fine = 3000, color = 'orange', description = 'The act of selling a Class D firearm without licensing'},
-        [9] = {title = 'Criminal Use of Weapon', class = 'Misdemeanor', id = 'P.C. 8009', months = 10, fine = 450, color = 'orange', description = 'Use of a weapon while in commission of a crime'},
-        [10] = {title = 'Possession of Illegal Firearm Modifications', class = 'Misdemeanor', id = 'P.C. 8010', months = 10, fine = 300, color = 'green', description = 'Being in possession of firearm modifications unlawfully'},
-        [11] = {title = 'Weapon Trafficking', class = 'Felony', id = 'P.C. 8011', months = 0, fine = 0, color = 'red', description = 'The transportation of a large amount of weapons for one point to another'},
-        [12] = {title = 'Brandishing a Weapon', class = 'Misdemeanor', id = 'P.C. 8012', months = 15, fine = 500, color = 'orange', description = 'The act of making a firearm purposely visible'},
-        [13] = {title = 'Insurrection', class = 'Felony', id = 'P.C. 8013', months = 0, fine = 0, color = 'red', description = 'Attempting to overthrow the government with violence'},
-        [14] = {title = 'Flying into Restricted Airspace', class = 'Felony', id = 'P.C. 8014', months = 20, fine = 1500, color = 'green', description = 'Piloting and aircraft into airspace that is governmentally controlled'},
-        [15] = {title = 'Jaywalking', class = 'Infraction', id = 'P.C. 8015', months = 0, fine = 150, color = 'green', description = 'crossing a roadway in a manner that is hazardous to motor vehicles'},
-        [16] = {title = 'Criminal Use of Explosives', class = 'Felony', id = 'P.C. 8016', months = 30, fine = 2500, color = 'orange', description = 'Use of explosives to committing a crime'},
+        [1] = {title = 'Discharge Firearm to Cause Grevious Bodily Harm', class = 'Indictable', id = 'S. 33A C.A.', months = 40, fine = 50000, color = 'orange'},
+        [2] = {title = 'Possess Unregistered Firearm', class = 'Indictable', id = 'S. 36(1) F.A.', months = 20, fine = 17500, color = 'orange'},
+        [3] = {title = 'Fail to ensure safe keeping of a firearm', class = 'Summary', id = 'S. 39 F.A.', months = 10, fine = 10000, color = 'green'},
+        [4] = {title = 'Possession of Imitation Firearm', class = 'Indictable', id = 'S. 7 F.A.', months = 10, fine = 10000, color = 'orange'},
+        [5] = {title = 'Possession/Use of Pistol', class = 'Indictable', id = 'S. 7 F.A.', months = 15, fine = 15000, color = 'orange'},
+        [6] = {title = 'Possession/Use of Firearm (Non-pistol)', class = 'Summary', id = 'S. 7A F.A.', months = 5, fine = 10000, color = 'green'},
+        [7] = {title = 'Possession/Use of Prohibited Firearm', class = 'Indictable', id = 'S. 7 F.A.', months = 30, fine = 25000, color = 'orange'},
+        [8] = {title = 'Prohibted Person (FPO) Possess Firearm', class = 'Indictable', id = 'S. 74 F.A.', months = 20, fine = 20000, color = 'orange'},
+        [9] = {title = 'Prohibted Person (FPO) Use Firearm', class = 'Indictable', id = 'S. 74 F.A.', months = 20, fine = 20000, color = 'orange'},
+        [10] = {title = 'Prohibted Person (FPO) Aquire Firearm', class = 'Indictable', id = 'S. 74 F.A.', months = 20, fine = 20000, color = 'orange'},
+        [11] = {title = 'Prohibted Person (FPO) Possess Firearm parts or ammo', class = 'Indictable', id = 'S. 74 F.A.', months = 20, fine = 20000, color = 'orange'},
+        [12] = {title = 'Supply firearms, parts, ammo to prohibited person (FPO)', class = 'Indictable', id = 'S. 74 F.A.', months = 15, fine = 15000, color = 'orange'},
+        [13] = {title = 'Possess loaded firearm in public place', class = 'Indictable', id = 'S. 93G(1)(a) C.A.', months = 15, fine = 3000, color = 'orange'},
+        [14] = {title = 'Discharge firearm in or near a public place', class = 'Indictable', id = 'S. 93G(1)(b) C.A.', months = 15, fine = 3000, color = 'orange'},
+        [15] = {title = 'Carry firearm in manner likely to injure', class = 'Indictable', id = 'S. 93G(1)(c) C.A.', months = 15, fine = 3000, color = 'orange'},
+        [16] = {title = 'Manufacture firearms', class = 'Indictable', id = 'S. 50(1) F.A.', months = 30, fine = 30000, color = 'orange'},
+        [17] = {title = 'Manufacture prohibited firearm', class = 'Indictable', id = 'S. 50(2) F.A.', months = 50, fine = 50000, color = 'orange'},
     },
+    --Traffic General
     [9] = {
-        [1] = {title = 'Driving While Intoxicated', class = 'Misdemeanor', id = 'P.C. 9001', months = 5, fine = 300, color = 'green', description = 'Operating a motor vehicle while impaired by alcohol'},
-        [2] = {title = 'Evading', class = 'Misdemeanor', id = 'P.C. 9002', months = 5, fine = 400, color = 'green', description = 'Hiding or running from lawful detainment'},
-        [3] = {title = 'Reckless Evading', class = 'Felony', id = 'P.C. 9003', months = 10, fine = 800, color = 'orange', description = 'Recklessly disregarding safety and Hiding or running from lawful detainment while '},
-        [4] = {title = 'Failure to Yield to Emergency Vehicle', class = 'Infraction', id = 'P.C. 9004', months = 0, fine = 600, color = 'green', description = 'Not giving way to emergency vehicles'},
-        [5] = {title = 'Failure to Obey Traffic Control Device', class = 'Infraction', id = 'P.C. 9005', months = 0, fine = 150, color = 'green', description = 'Not following the safety devices of the roadway'},
-        [6] = {title = 'Nonfunctional Vehicle', class = 'Infraction', id = 'P.C. 9006', months = 0, fine = 75, color = 'green', description = 'Having a vehicle that is no longer functional in the roadway'},
-        [7] = {title = 'Negligent Driving', class = 'Infraction', id = 'P.C. 9007', months = 0, fine = 300, color = 'green', description = 'Driving in a manner as to unknowingly disregard safety'},
-        [8] = {title = 'Reckless Driving', class = 'Misdemeanor', id = 'P.C. 9008', months = 10, fine = 750, color = 'orange', description = 'Driving in a manner as to knowingly disregard safety'},
-        [9] = {title = 'Third Degree Speeding', class = 'Infraction', id = 'P.C. 9009', months = 0, fine = 225, color = 'green', description = 'Speeding 15 over the limit'},
-        [10] = {title = 'Second Degree Speeding', class = 'Infraction', id = 'P.C. 9010', months = 0, fine = 450, color = 'green', description = 'Speeding 35 over the limit'},
-        [11] = {title = 'First Degree Speeding', class = 'Infraction', id = 'P.C. 9011', months = 0, fine = 750, color = 'green', description = 'Speeding 50 over the limit'},
-        [12] = {title = 'Unlicensed Operation of Vehicle', class = 'Infraction', id = 'P.C. 9012', months = 0, fine = 500, color = 'green', description = 'The operation of a motor vehicle without proper licensing'},
-        [13] = {title = 'Illegal U-Turn', class = 'Infraction', id = 'P.C. 9013', months = 0, fine = 75, color = 'green', description = 'Performing a u-turn where it is prohibited'},
-        [14] = {title = 'Illegal Passing', class = 'Infraction', id = 'P.C. 9014', months = 0, fine = 300, color = 'green', description = 'Passing other motor vehicles in a prohibited manner'},
-        [15] = {title = 'Failure to Maintain Lane', class = 'Infraction', id = 'P.C. 9015', months = 0, fine = 300, color = 'green', description = 'Not staying in the correct lane with a motor vehicle'},
-        [16] = {title = 'Illegal Turn', class = 'Infraction', id = 'P.C. 9016', months = 0, fine = 150, color = 'green', description = 'Performing a turn where it is prohibited'},
-        [17] = {title = 'Failure to Stop', class = 'Infraction', id = 'P.C. 9017', months = 0, fine = 600, color = 'green', description = 'Not stopping for a lawful stop or traffic device'},
-        [18] = {title = 'Unauthorized Parking', class = 'Infraction', id = 'P.C. 9018', months = 0, fine = 300, color = 'green', description = 'Parking a vehicle in a location that requires approval with any'},
-        [19] = {title = 'Hit and Run', class = 'Misdemeanor', id = 'P.C. 9019', months = 10, fine = 500, color = 'green', description = 'Striking another person or vehicle and fleeing the location'},
-        [20] = {title = 'Driving without Headlights or Signals', class = 'Infraction', id = 'P.C. 9020', months = 0, fine = 300, color = 'green', description = 'Operating a vehicle with no functional lights'},
-        [21] = {title = 'Street Racing', class = 'Felony', id = 'P.C. 9021', months = 15, fine = 1500, color = 'green', description = 'Operating motorvehicles in a contest'},
-        [22] = {title = 'Piloting without Proper Licensing', class = 'Felony', id = 'P.C. 9022', months = 20, fine = 1500, color = 'orange', description = 'Failure to be in possession of valid licensing when operating an aircraft'},
-        [23] = {title = 'Unlawful Use of a Motor Vehicle', class = 'Misdemeanor', id = 'P.C. 9023', months = 10, fine = 750, color = 'green', description = 'The use of a motor vehicle without a lawful reason'},
+        [1] = {title = 'Engage in a Police Pursuit', class = 'Indictable', id = 'S. 51B C.A.', months = 40, fine = 50000, color = 'orange'},
+        [2] = {title = 'Dangerous Driving Occassioning Death', class = 'Indictable', id = 'S. 52A (1) C.A.', months = 50, fine = 50000, color = 'orange'},
+        [3] = {title = 'Dangerous Driving Occassioning Grevious Bodily Harm', class = 'Indictable', id = 'S. 52A (3) C.A.', months = 30, fine = 20000, color = 'orange'},
+        [4] = {title = 'Fail to stop and assist after causing harm/death', class = 'Indictable', id = 'S. 52AB C.A.', months = 20, fine = 10000, color = 'orange'},
+        [5] = {title = 'Cause injury by furious driving', class = 'Indictable', id = 'S. 53 C.A.', months = 20, fine = 10000, color = 'orange'},
+        [6] = {title = 'Negligent Driving', class = 'Summary', id = 'S. 117 R.T.A.', months = 15, fine = 3000, color = 'green'},
+        [7] = {title = 'Reckless Driving', class = 'Summary', id = 'S. 117 R.T.A.', months = 15, fine = 5000, color = 'green'},
+        [8] = {title = 'Predatory Driving', class = 'Summary', id = 'S. 51A C.A.', months = 25, fine = 15000, color = 'orange', description = 'Section 51A Crimes Act - The driver of a vehicle who, while in pursuit of or travelling near another vehicle engages in a course of conduct that causes or threatens an impact involving the other vehicle, and intends by that course of conduct to cause a person in the other vehicle actual bodily harm'},
+        [9] = {title = 'Speed in Manner Dangerous', class = 'Summary', id = 'S. 117 R.T.A.', months = 15, fine = 3000, color = 'green'},
+        [10] = {title = 'Failure of driver to disclose identity', class = 'Summary', id = 'S. 15 LEPRA', months = 15, fine = 2000, color = 'green'},
+        [11] = {title = 'Failure of owner to disclose identity', class = 'Summary', id = 'S. 17 LEPRA', months = 15, fine = 2000, color = 'green', description = 'Section 17 Law Enforcement Powers and Responsibilities Act (NSW) - An owner of a vehicle who is required in accordance with section 14 by a police officer to disclose the identity of the driver of, or a passenger in or on, the vehicle must (unless the owner has a reasonable excuse for not doing so), disclose the identity of any person the owner knows or has reason to suspect was the driver or a passenger, or if the owner does not know the full and correct identity of the person--disclose such information about the persons identity (such as any alias used by the person or the general location of his or her residential address) as is known to the owner.'},
+        [12] = {title = 'False information about identity of driver or passengers', class = 'Summary', id = 'S. 18 LEPRA', months = 15, fine = 2000, color = 'green'},
+        [13] = {title = 'Fail/refuse to stop vehicle when directed', class = 'Summary', id = 'S. 39 LEPRA', months = 15, fine = 5000, color = 'green'},
+        [14] = {title = 'Fail/refuse to comply with lawful direction (Traffic)', class = 'Summary', id = 'S. 39 LEPRA', months = 15, fine = 5000, color = 'green'},
+        [15] = {title = 'Not give particulars to other driver (Crashes)', class = 'Summary', id = 'R.R. Rule 287', months = 15, fine = 5000, color = 'green'},
+        [16] = {title = 'Not give particulars to injured person (Crashes)', class = 'Summary', id = 'R.R. Rule 287', months = 15, fine = 5000, color = 'green'},
+        [17] = {title = 'Not give particulars to owner of damaged property (Crashes)', class = 'Summary', id = 'R.R. Rule 287', months = 15, fine = 5000, color = 'green'},
     },
+    --Traffic - Defects & Licensing
     [10] = {
-        [1] = {title = 'Hunting in Restricted Areas', class = 'Infraction', id = 'P.C. 10001', months = 0, fine = 450, color = 'green', description = 'Harvesting game in areas where it is prohibited to do so'},
-        [2] = {title = 'Unlicensed Hunting', class = 'Infraction', id = 'P.C. 10002', months = 0, fine = 450, color = 'green', description = 'Harvesting game without proper licensing'},
-        [3] = {title = 'Animal Cruelty', class = 'Misdemeanor', id = 'P.C. 10003', months = 10, fine = 450, color = 'green', description = 'The act of abusing an animal knowingly or not'},
-        [4] = {title = 'Hunting with a Non-Hunting Weapon', class = 'Misdemeanor', id = 'P.C. 10004', months = 10, fine = 750, color = 'green', description = 'To use a weapon not lawfully stated or manufactured to be used for the harvesting of wild game'},
-        [5] = {title = 'Hunting outside of hunting hours', class = 'Infraction', id = 'P.C. 10005', months = 0, fine = 750, color = 'green', description = 'Harvesting animals outside of specified time to do so'},
-        [6] = {title = 'Overhunting', class = 'Misdemeanor', id = 'P.C. 10006', months = 10, fine = 1000, color = 'green', description = 'Taking more than legally specified amount of game'},
-        [7] = {title = 'Poaching', class = 'Felony', id = 'P.C. 10007', months = 20, fine = 1250, color = 'red', description = 'Harvesting an animal that is listed as legally non-harvestable'},
-    }
+        [1] = {title = 'Driving without appropriate licence', class = 'Summary', id = 'S. 53 R.T.A.', months = 15, fine = 5000, color = 'green'},
+        [2] = {title = 'Driving whilst suspended/disqualified', class = 'Summary', id = 'S. 54 R.T.A.', months = 15, fine = 5000, color = 'green'},
+        [3] = {title = 'Make drivers licence application whilst suspended/disqualified', class = 'Summary', id = 'S. 54 R.T.A.', months = 15, fine = 5000, color = 'green'},
+        [4] = {title = 'Driving an unregistered vehicle', class = 'Summary', id = 'S. 68 R.T.A.', months = 0, fine = 2000, color = 'green'},
+        [5] = {title = 'Use vehicle not complying with roadworthy standards', class = 'Summary', id = 'RT (VR) Reg 2007', months = 0, fine = 2000, color = 'green'},
+        [6] = {title = 'Start/Drive vehicle causing unnecessary noise/smoke', class = 'Summary', id = 'R.R. 2014 Rule 291', months = 0, fine = 2000, color = 'green'},
+        [7] = {title = 'Use vehicle in breach of minor defect notice', class = 'Summary', id = 'RT (VR) Reg 2017 Cl 128(2)', months = 0, fine = 2000, color = 'green'},
+        [8] = {title = 'Use vehicle in breach of major defect notice', class = 'Summary', id = 'RT (VR) Reg 2017 Cl 128(2)', months = 0, fine = 3500, color = 'green'},
+        [9] = {title = 'Use heavy vehicle in breach of minor defect notice', class = 'Summary', id = 'HVNL S. 529', months = 0, fine = 5000, color = 'green'},
+        [10] = {title = 'Use heavy vehicle in breach of major defect notice', class = 'Summary', id = 'HVNL S. 529', months = 0, fine = 5000, color = 'green'},
+    },
+    --Traffic - Signs & Lights
+    [11] = {
+        [1] = {title = 'Proceed through red traffic light', class = 'Summary', id = 'R.R. 2014 Rule 59(1)', months = 0, fine = 2500, color = 'green'},
+        [2] = {title = 'Not stop before traffic lights at yellow light', class = 'Summary', id = 'R.R. Rule 57 (1)(b)', months = 0, fine = 2500, color = 'green'},
+        [3] = {title = 'Not stop at/before stop line/stop sign', class = 'Summary', id = 'R.R. Rule 68 (1)', months = 0, fine = 2000, color = 'green'},
+        [4] = {title = 'Not give way to vehicle (give way sign/line)', class = 'Summary', id = 'R.R. Rule 69 (1)', months = 0, fine = 2000, color = 'green'},
+        [5] = {title = 'Not give way to pedestrian on pedestrian crossing', class = 'Summary', id = 'R.R. Rule 81 (2)', months = 0, fine = 2500, color = 'green'},
+        [6] = {title = 'Drive contrary to direction of traffic lane arrow', class = 'Summary', id = 'R.R. Rule 92 (1)', months = 0, fine = 1000, color = 'green'},
+        [7] = {title = 'Pass / Overtake Vehicle contrary to no overtaking or passing sign', class = 'Summary', id = 'R.R. Rule 93 (1)', months = 0, fine = 1000, color = 'green'},
+        [8] = {title = 'Drive in emergency stopping lane', class = 'Summary', id = 'R.R. Rule 95 (1)', months = 0, fine = 1000, color = 'green'},
+        [9] = {title = 'Disobey no entry sign', class = 'Summary', id = 'R.R. Rule 100', months = 0, fine = 1000, color = 'green'},
+        [10] = {title = 'Disobey one-way sign', class = 'Summary', id = 'R.R. Rule 98(1)', months = 0, fine = 1000, color = 'green'},
+        [11] = {title = 'Unreasonably obstruct driver/pedestrian', class = 'Summary', id = 'R.R. Rule 125(1)', months = 0, fine = 1000, color = 'green'},
+        [12] = {title = 'Drive behind other vehicle too closely to stop safely', class = 'Summary', id = 'R.R. Rule 126', months = 0, fine = 2500, color = 'green'},
+        [13] = {title = 'Not keep right of dividing line', class = 'Summary', id = 'R.R. Rule 132(2)', months = 0, fine = 2000, color = 'green'},
+        [14] = {title = 'Drive on dividing strip', class = 'Summary', id = 'R.R. Rule 137(1)', months = 0, fine = 1000, color = 'green'},
+        [15] = {title = 'Illegal U-Turn', class = 'Summary', id = 'R.R. Rule 37-42', months = 0, fine = 800, color = 'green'},
+
+    },
+    -- Traffic - Vehicle Operation
+    [12] = {
+        [1] = {title = 'Overtake vehicle when unsafe', class = 'Summary', id = 'R.R. Rule 140', months = 0, fine = 2000, color = 'green'},
+        [2] = {title = 'Cut in front of vehicle after overtaking', class = 'Summary', id = 'R.R. Rule 144(b)', months = 0, fine = 2000, color = 'green'},
+        [3] = {title = 'Ride motorcycle more than 2 abreast on road or in marked lane', class = 'Summary', id = 'R.R. Rule 151', months = 0, fine = 1000, color = 'green'},
+        [4] = {title = 'Leave engine on when vehicle unattended', class = 'Summary', id = 'R.R. Rule 213(3)', months = 0, fine = 800, color = 'green'},
+        [5] = {title = 'Not remove ignitiion key (vehicle unattended)', class = 'Summary', id = 'R.R. Rule 213(4)', months = 0, fine = 800, color = 'green'},
+        [6] = {title = 'Not secure windows/lock doors (vehicle unattended)', class = 'Summary', id = 'R.R. Rule 213(4)', months = 0, fine = 800, color = 'green'},
+        [7] = {title = 'Not secure windows/lock doors (vehicle unattended)', class = 'Summary', id = 'R.R. Rule 213(5)', months = 0, fine = 800, color = 'green'},
+        [8] = {title = 'Drive during period of darkness without prescribed lights', class = 'Summary', id = 'R.R. Rule 215-1(1)', months = 0, fine = 800, color = 'green'},
+        [9] = {title = 'Use high beam on oncoming vehicle', class = 'Summary', id = 'R.R. Rule 218(1)', months = 0, fine = 800, color = 'green'},
+        [10] = {title = 'Use horn unnecessarily', class = 'Summary', id = 'R.R. Rule 224', months = 0, fine = 2000, color = 'green'},
+        [11] = {title = 'Driver/rider/passenger use device to make sound like a siren', class = 'Summary', id = 'R.R. Rule 224-1', months = 0, fine = 2000, color = 'green'},
+        [12] = {title = 'Driver not wearing seatbelt', class = 'Summary', id = 'R.R. Rule 264', months = 0, fine = 2000, color = 'green'},
+        [13] = {title = 'Passenger not wear seatbelt properly', class = 'Summary', id = 'R.R. Rule 267', months = 0, fine = 2000, color = 'green'},
+        [14] = {title = 'Travel in/on vehicle in part not for passengers/goods', class = 'Summary', id = 'R.R. Rule 268', months = 0, fine = 2000, color = 'green'},
+        [15] = {title = 'Travel in/on boot of motor vehicle', class = 'Summary', id = 'R.R. Rule 268-1', months = 0, fine = 2000, color = 'green'},
+        [16] = {title = 'Drive motor vehicle with persons in or on boot', class = 'Summary', id = 'R.R. Rule 268-2', months = 0, fine = 2000, color = 'green'},
+        [17] = {title = 'Ride motorcycle with no helmet', class = 'Summary', id = 'R.R. Rule 270(1)(a)', months = 0, fine = 2000, color = 'green'},
+        [18] = {title = 'Ride motorcycle with one unhelmeted passenger', class = 'Summary', id = 'R.R. Rule 270(1)(b)', months = 0, fine = 2000, color = 'green'},
+        [19] = {title = 'Motorcycle passenger not wearing helmet', class = 'Summary', id = 'R.R. Rule 270(2)', months = 0, fine = 2000, color = 'green'},
+        [20] = {title = 'Drive on path', class = 'Summary', id = 'R.R. Rule 287', months = 0, fine = 2000, color = 'green'},
+        [21] = {title = 'Drive on nature strip', class = 'Summary', id = 'R.R. Rule 289', months = 0, fine = 2000, color = 'green'},
+        [22] = {title = 'Drive on traffic island', class = 'Summary', id = 'R.R. Rule 289', months = 0, fine = 2000, color = 'green'},
+        [23] = {title = 'Drive/tow vehicle with unsecured load', class = 'Summary', id = 'R.R. Rule 292(a)', months = 0, fine = 2500, color = 'green'},
+        [24] = {title = 'Not reverse safely', class = 'Summary', id = 'R.R. Rule 296(1)', months = 0, fine = 192, color = 'green'},
+        [25] = {title = 'Drive without proper control of vehicle', class = 'Summary', id = 'R.R. Rule 297(1)', months = 0, fine = 2500, color = 'green'},
+        [26] = {title = 'Drive motor vehicle with person or animal in lap', class = 'Summary', id = 'R.R. Rule 297(1A)', months = 0, fine = 2500, color = 'green'},
+        [27] = {title = 'Drive using mobile phone when not permitted', class = 'Summary', id = 'R.R. Rule 300', months = 0, fine = 2000, color = 'green'},
+        [28] = {title = 'Driver consume alcohol while driving', class = 'Summary', id = 'R.R. Rule 298', months = 0, fine = 2000, color = 'green'},
+        [29] = {title = 'Driver motor vehicle not carry licence', class = 'Summary', id = 'R.R. Rule 300-5', months = 0, fine = 2000, color = 'green'},
+        [30] = {title = 'Not obey direction of police/authorised person', class = 'Summary', id = 'R.R. Rule 304(1)', months = 0, fine = 2000, color = 'green'},
+        [31] = {title = 'Burnout', class = 'Summary', id = 'S. 116 R.T.A.', months = 0, fine = 3000, color = 'green'},
+        [32] = {title = 'Use vehicle without correctly fixed/displayed number plate', class = 'Summary', id = 'R.R. (VR) Cl 60', months = 0, fine = 2500, color = 'green'},
+        [33] = {title = 'Use vehicle displaying misleading plate', class = 'Summary', id = 'R.R. (VR) Cl 129 (3)(b)', months = 0, fine = 2500, color = 'green'},
+        [34] = {title = 'Use vehicle with sound system emitting offensive noise', class = 'Summary', id = 'PE(NC) Reg 2017 Cl 33(1)', months = 0, fine = 300, color = 'green'},
+        [35] = {title = 'Organise, promote, or take part in street race', class = 'Summary', id = 'S. 115 R.T.A.', months = 15, fine = 10000, color = 'green'},
+    },
+
+    --Speeding
+    [13] = {
+
+        [1] = {title = 'Speeding over 10kmph', class = 'Summary', id = 'R.R. Rule 20', months = 0, fine = 1000, color = 'green'},
+        [2] = {title = 'Speeding over 20kmph', class = 'Summary', id = 'R.R. Rule 20', months = 0, fine = 2000, color = 'green'},
+        [3] = {title = 'Speeding over 30kmph', class = 'Summary', id = 'R.R. Rule 20', months = 0, fine = 3000, color = 'green'},
+        [4] = {title = 'Speeding over 45kmph', class = 'Summary', id = 'R.R. Rule 20', months = 0, fine = 5000, color = 'green'},
+        [5] = {title = 'Speeding over 100kmph', class = 'Summary', id = 'R.R. Rule 20', months = 0, fine = 6000, color = 'green'},
+        [6] = {title = 'Speeding over 10kmph (Heavy Vehicle)', class = 'Summary', id = 'R.R. Rule 20', months = 0, fine = 1500, color = 'green'},
+        [7] = {title = 'Speeding over 20kmph (Heavy Vehicle)', class = 'Summary', id = 'R.R. Rule 20', months = 0, fine = 2500, color = 'green'},
+        [8] = {title = 'Speeding over 30kmph (Heavy Vehicle)', class = 'Summary', id = 'R.R. Rule 20', months = 0, fine = 3500, color = 'green'},
+        [9] = {title = 'Speeding over 45kmph (Heavy Vehicle)', class = 'Summary', id = 'R.R. Rule 20', months = 0, fine = 5500, color = 'green'},
+        [10] = {title = 'Speeding over 100kmph (Heavy Vehicle)', class = 'Summary', id = 'R.R. Rule 20', months = 0, fine = 6500, color = 'green'},
+
+    },
+    --Drink / Drug Driving
+    [14] = {
+
+        [1] = {title = 'Low-range drink driving (BAC 0.05 - 0.079)', class = 'Summary', id = 'S. 110 R.T.A.', months = 0, fine = 1000, color = 'green'},
+        [2] = {title = 'Mid-range drink driving (BAC 0.08 - 0.149)', class = 'Summary', id = 'S. 110 R.T.A.', months = 12, fine = 3000, color = 'green'},
+        [3] = {title = 'High-range drink driving (BAC 0.15 or higher)', class = 'Summary', id = 'S. 110 R.T.A.', months = 24, fine = 5000, color = 'green'},
+        [4] = {title = 'Drive with presence of illicit drugs in system', class = 'Summary', id = 'S. 111 R.T.A.', months = 0, fine = 5000, color = 'green'},
+        [5] = {title = 'Driving under the influence', class = 'Summary', id = 'S. 112 R.T.A.', months = 18, fine = 5000, color = 'green'},
+
+
+    },
 }
 
 Config.AllowedJobs = {}
